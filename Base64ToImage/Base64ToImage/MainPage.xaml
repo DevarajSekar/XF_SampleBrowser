@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Base64ToImage.MainPage" BackgroundColor="LightCoral">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Base 64 string to Image" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Base 64 String" FontSize="Title" Margin="10,0,0,0" />
+        <Entry Margin="10" x:Name="inputString"/>
+        <Button Text="Convert Base 64 String to Image" FontSize="Large" Margin="10" Clicked="Button_Clicked"/>
+        <Image Margin="10" BackgroundColor="White" x:Name="imageView"/>
+    </StackLayout>
+
+</ContentPage>
