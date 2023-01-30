@@ -47,8 +47,6 @@ namespace App1
                     GradientStops = new GradientStopCollection()
                 {
                     new GradientStop(){ Color= Color.FromHex("#016eb9") , Offset=0.1f},
-                    //new GradientStop(){ Color=Color.FromHex("#686a5f") , Offset=0.75f},
-                    //new GradientStop(){ Color=Color.FromHex("#424539") , Offset=1.0f}
                     new GradientStop(){ Color=Color.FromHex("#010c12") , Offset=0.8f},
                     new GradientStop(){ Color=Color.FromHex("#010c12") , Offset=1.0f}
                 }
@@ -64,7 +62,7 @@ namespace App1
             }
             else if (index == 1)
             {
-
+                await Navigation.PushPopupAsync(new FencePage());
             }
         }
     }
