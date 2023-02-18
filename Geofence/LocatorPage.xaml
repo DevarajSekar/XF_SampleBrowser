@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.RgPage">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="Margin" Value="20,0,0,0" />
+                <Setter Property="FontFamily" Value="poppins" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <Frame Padding="0" Margin="25" CornerRadius="25" WidthRequest="250" HeightRequest="250">
+        <Grid WidthRequest="250" HeightRequest="250">
+
+            <ActivityIndicator Grid.Row="0" x:Name="customloader"  
+                                        Color="Blue"  
+                                        IsRunning="True"  
+                                        IsEnabled="True"  
+                                        VerticalOptions="CenterAndExpand"  
+                                        HorizontalOptions="CenterAndExpand"  
+                                        HeightRequest="70"  
+                                        WidthRequest="70"/>
+
+            <StackLayout x:Name="infoStack" IsVisible="false" Grid.Row="0">
+
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Label Text="FeatureName: " />
+                    <Label x:Name="featureNameLabel" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Thoroughfare: " />
+                    <Label x:Name="thoroughfareNameLabel" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Main Area: " />
+                    <Label x:Name="mainAreaNameLabel" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Locality: " />
+                    <Label x:Name="localityNameLabel" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="AdminArea: "/>
+                    <Label x:Name="adminAreaLabel"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="SubAdminArea: " />
+                    <Label x:Name="subAdminAreaNameLabel" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="SubThoroughfare: " />
+                    <Label x:Name="subThoroughfareNameLabel" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="PostalCode: " />
+                    <Label x:Name="postalCodeNameLabel" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="CountryCode: "/>
+                    <Label x:Name="countryCodeLabel"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="CountryName: " />
+                    <Label x:Name="countryNameLabel"/>
+                </StackLayout>
+
+            </StackLayout>
+            
+            <Button VerticalOptions="EndAndExpand" 
+                    FontSize="Large"  
+                    FontFamily="poppins"
+                        IsVisible="false"
+                        x:Name="closeButton"
+                    BackgroundColor="Transparent" TextColor="Black" 
+                    Clicked="CloseBtn_Clicked" Text="Close" />
+        </Grid>
+    </Frame>
+
+</pages:PopupPage>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:localize="clr-namespace:App1"
+             x:Class="App1.FencePage"
+    BackgroundColor="LightBlue">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="poppins" />
+                <Setter Property="CornerRadius" Value="15" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Frame Padding="0" Margin="10,5,10,5" CornerRadius="20">
+            <localize:CustomMap Grid.Row="0" x:Name="customMap"/>
+        </Frame>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Text="UP" x:Name="up" Clicked="up_Clicked" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button Text="LEFT" x:Name="left" Clicked="left_Clicked" Margin="20,0,0,0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+            <Button Text="USER LOCATION" x:Name="loc" Clicked="loc_Clicked" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button Text="RIGHT" x:Name="right" Clicked="right_Clicked" Margin="0,0,20,0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="End"/>
+            <Button Text="DOWN" x:Name="down" Clicked="down_Clicked" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+
+        <Button Grid.Row="2" VerticalOptions="EndAndExpand" 
+                    FontSize="Large"  
+                        x:Name="closeButton"
+                    BackgroundColor="Transparent" TextColor="Black" 
+                    Clicked="CloseBtn_Clicked" Text="Close/RESET" />
+
+    </Grid>
+</pages:PopupPage>
