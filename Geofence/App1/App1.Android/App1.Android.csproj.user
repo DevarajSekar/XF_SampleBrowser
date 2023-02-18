@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SelectedDevice>HMD Global Nokia 5.4</SelectedDevice>
+    <SelectedDevice>Xiaomi Redmi 4</SelectedDevice>
     <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
-    <ActiveDebugProfile>HMD Global Nokia 5.4</ActiveDebugProfile>
+    <ActiveDebugProfile>Xiaomi Redmi 4</ActiveDebugProfile>
     <DefaultDevice>phone_m-dpi_5_4in_-_api_28</DefaultDevice>
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
   </PropertyGroup>

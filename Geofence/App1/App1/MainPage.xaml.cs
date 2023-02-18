@@ -16,10 +16,12 @@ namespace App1
     {
         public GeoClassCollection GeoClassCollection { get; set; }
         int index { get; set; }
+        double DP { get; set; }
         public MainPage()
         {
             InitializeComponent();
-            GeoClassCollection = new GeoClassCollection();
+            DP = DependencyService.Get<IServiceDp>().GetDpScale();
+            GeoClassCollection = new GeoClassCollection(DP);
             this.BindingContext = GeoClassCollection;
         }
 
@@ -58,7 +60,7 @@ namespace App1
         {
             if (index == 0)
             {
-                await Navigation.PushPopupAsync(new RgPage());
+                await Navigation.PushPopupAsync(new RgPage(10.790483, 78.704673, true));
             }
             else if (index == 1)
             {
@@ -72,8 +74,8 @@ namespace App1
         public string templateImage { get; set; }
         public string buttonImage { get; set; }
         public string templateContent { get; set; }
-
         public string templateTopic { get; set; }
+        public double ImageHeight { get; set; }
     }
 
     public class GeoClassCollection : INotifyPropertyChanged
@@ -84,17 +86,32 @@ namespace App1
 
         public ICommand TemplateButonClicked;
 
-        public GeoClassCollection()
+        public double DP;
+
+        public double height { get; set; }
+
+        public GeoClassCollection(double dp)
         {
+            DP = dp;
+            if (DP <= 1.75)
+            {
+                height = 150;
+            }
+            else if (DP > 1.75)
+            {
+                height = 250;
+            }
             GeoClasses = new ObservableCollection<GeoClass>()
             {
                 new GeoClass(){
+                    ImageHeight = height * DP,
                     templateTopic = "GEO-LOCATOR",
                     templateImage="locator2.jpg",
                     buttonImage="locatorbutton.png",
                     templateContent="Geolocation makes it possible, from any device connected to the Internet, to obtain all types of information in real time and locate the user with pinpoint accuracy at a given point in time. Geolocation technology is the foundation for location-positioning services and location-aware applications (apps)."
                 },
                 new GeoClass(){
+                    ImageHeight = height * DP,
                     templateTopic = "GEO-FENCING",
                     templateImage="globe.jpg",
                     buttonImage="fencubutton5.jpg",
@@ -123,5 +140,10 @@ namespace App1
         {
             PropertyChanged?.Invoke(this, eventArgs);
         }
+    }
+
+    public interface IServiceDp
+    {
+        double GetDpScale();
     }
 }
