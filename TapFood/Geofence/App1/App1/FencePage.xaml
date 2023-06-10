@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:localize="clr-namespace:App1"
+             x:Class="App1.FencePage"
+    BackgroundColor="Transparent">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="poppinslight" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="BackgroundColor" Value="#2d2e2d" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <Grid>
+        <Frame CornerRadius="15" Padding="0" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <ScrollView x:Name="scroll" VerticalScrollBarVisibility="Always" >
+                    <WebView Grid.Row="0" Source="https://planetyumm.eatselecta.com/food_court/hardy" HeightRequest="25000"/>
+                </ScrollView>
+                <Frame BackgroundColor="Transparent" Grid.Row="1" Padding="0">
+                    <Grid>
+                        <ImageButton Source="up.png" BackgroundColor="Transparent" Margin="80,0,0,10" Clicked="Button_Clicked_1" VerticalOptions="End" HorizontalOptions="Start"/>
+                        <ImageButton Source="up.png" BackgroundColor="Transparent" Rotation="180" Margin="0,0,0,10" Clicked="Button_Clicked_2" VerticalOptions="End" HorizontalOptions="Center"/>
+                        <Button Text="Close" Margin="0,0,10,10" Clicked="Button_Clicked" VerticalOptions="End" HorizontalOptions="End"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Frame>
+    </Grid>
+</pages:PopupPage>

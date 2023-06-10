@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MainPage"
+             xmlns:local="clr-namespace:App1">
+
+    <StackLayout>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Aspect="AspectFill" Source="food1.jpg" VerticalOptions="FillAndExpand"/>
+            <Frame Grid.Row="0" 
+                   Padding="0" 
+                   HeightRequest="95"
+                   WidthRequest="95"
+                   VerticalOptions="End" 
+                   HorizontalOptions="End" 
+                   CornerRadius="75" 
+                   Margin="50"
+                   BackgroundColor="Orange">
+                <Button 
+                    Text="Tap to Order" 
+                    FontFamily="poppins" 
+                    BackgroundColor="Transparent" 
+                    Clicked="ImageButton_Clicked"
+                    TextColor="Black"/>
+            </Frame>
+            <Frame Grid.Row="0" 
+                   Padding="0" 
+                   WidthRequest="350"
+                   HeightRequest="100"
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Start" 
+                   Margin="-105,25,0,0"
+                   Rotation="-45"
+                   BackgroundColor="Orange">
+                <Label Text="Order on the go!!"  
+                       FontFamily="poppins"
+                       Margin="95,32,0,0"
+                       FontSize="20"
+                       BackgroundColor="Transparent" 
+                       TextColor="Black"/>
+            </Frame>
+            <Frame Grid.Row="0" 
+                   Padding="0" 
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   VerticalOptions="End" 
+                   HorizontalOptions="Start" 
+                   CornerRadius="75" 
+                   Margin="50"
+                   BackgroundColor="Orange">
+                <Button 
+                    Text="Exit" 
+                    FontFamily="poppins" 
+                    BackgroundColor="Transparent" 
+                    Clicked="Button_Clicked"
+                    TextColor="Black"/>
+            </Frame>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
