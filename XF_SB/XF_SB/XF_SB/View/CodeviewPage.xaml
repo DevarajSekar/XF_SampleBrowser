@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_SB.CodeviewPage">
+
+    <Frame Padding="0" Margin="25" CornerRadius="25" WidthRequest="250" HeightRequest="250">
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" FontSize="20" Margin="20" x:Name="MainTitle" TextColor="Black" FontFamily="ubuntubold" Grid.Column="0"/>
+                    <ImageButton Grid.Row="0" HeightRequest="40" VerticalOptions="Start"  Margin="0,10,10,0" BackgroundColor="Transparent" x:Name="closeButton" Source="cross.png" Grid.Column="1" Clicked="closeButton_Clicked"/>
+                    <BoxView Margin="10,0,10,0" Grid.Row="1" Grid.ColumnSpan="2" Color="Gray" WidthRequest="1"/>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Label FontSize="16" Margin="10" Text="Key points: " TextColor="Black" FontFamily="ubunturegular"/>
+                </Grid>
+
+                <Grid Grid.Row="2" VerticalOptions="Start">
+                    <Label FontSize="16" Margin="10" x:Name="keyPoints" TextColor="Black" FontFamily="ubunturegular"/>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Label FontSize="16" Margin="10" Text="Imp Code snippets: " TextColor="Black" FontFamily="ubunturegular"/>
+                </Grid>
+
+
+                <Grid Grid.Row="4">
+                    <Label FontSize="16" Margin="10" x:Name="codesnipets" TextColor="Black" FontFamily="ubunturegular"/>
+                </Grid>
+
+            </Grid>
+        </ScrollView>
+    </Frame>
+    
+</pages:PopupPage>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_SB.MainPage"
+             BackgroundColor="White"
+             xmlns:local="clr-namespace:XF_SB"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Frame 
+            BackgroundColor="White" 
+            HeightRequest="95"
+            BorderColor="Transparent">
+
+            <StackLayout>
+                <Label 
+                    FontFamily="ubuntubold"
+                Text="App Dashboard" 
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Start" 
+                TextColor="#0476D0" FontSize="32"/>
+
+                <Label 
+                    x:Name="loginTime"
+                    FontFamily="ubuntulight"
+    HorizontalTextAlignment="Start" 
+    TextColor="#030e4f" FontSize="10"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame CornerRadius="25" Margin="0,-20,0,0" BackgroundColor="	#eff1f3" HasShadow="True" Padding="0" VerticalOptions="FillAndExpand">
+            <Grid
+            Margin="0,0,0,10"
+            VerticalOptions="FillAndExpand">
+
+                <ListView 
+                VerticalOptions="FillAndExpand"
+                RowHeight="100"
+                    SelectionMode="None"
+                ItemsSource="{Binding ListItems}">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame CornerRadius="12" Margin="12,7,12,7" Padding="5" VerticalOptions="Fill" BackgroundColor="White">
+
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                            NumberOfTapsRequired="1"
+                                            Command="{Binding TapCommand}"
+                                            CommandParameter="{Binding Name}"/>
+                                    </Frame.GestureRecognizers>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30*"/>
+                                            <ColumnDefinition Width="70*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image WidthRequest="60" Margin="10" HorizontalOptions="Start" Grid.Column="0" Grid.RowSpan="2" Source="{Binding Icon}"/>
+                                        <Label Text="{Binding Name}" 
+                                               FontFamily="ubuntubold"
+                                           HorizontalOptions="Start"
+                                           Grid.Column="1" Grid.Row="0"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       FontAttributes="Bold"
+       FontSize="18"
+       TextColor="	#0476D0"/>
+                                        <Label Text="{Binding Description}"
+                                               FontFamily="ubunturegular"
+                                               HorizontalOptions="Start"
+                                    Grid.Column="1" Grid.Row="1"
+                                           Margin="0,0,0,10"
+VerticalTextAlignment="Center"
+HorizontalTextAlignment="Start"
+FontSize="11"
+TextColor="SlateGray"/>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>
